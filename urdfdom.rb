@@ -8,8 +8,8 @@ class Urdfdom < Formula
   depends_on "cmake" => :build
   depends_on "boost" => :build
   depends_on "tinyxml" => :build
-  depends_on "ros/deps/console_bridge"
-  depends_on "ros/deps/urdfdom_headers"
+  depends_on "console_bridge"
+  depends_on "urdfdom_headers"
 
   def install
     system "cmake", ".", *std_cmake_args
