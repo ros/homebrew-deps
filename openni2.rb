@@ -1,26 +1,27 @@
 require 'formula'
 
 class Openni2 < Formula
-  homepage 'https://github.com/OpenNI/OpenNI2'
-  url 'https://launchpad.net/~v-launchpad-jochen-sprickerhof-de/+archive/pcl/+files/openni2_2.1.0.4.orig.tar.gz'
-  sha1 '8d423621f7c0c3a72b64fedf8ec5193f8e1341b5'
+  homepage 'https://github.com/occipital/openni2'
+  url 'https://github.com/occipital/OpenNI2/archive/2.2-beta2.tar.gz'
+  sha1 '8c9a57de7224cd0a0a4c4bb03a7637bd179df34c'
 
-  def patches
+  patch do
     # fixes compilation on OS X with clang (e.g. 10.9)
     # See https://github.com/ros/homebrew-hydro/issues/10
     # This patch was introduced when openni2_2.1.0.4 was being built with this formula.
     # Apparently the issue is addressed upstream. So when updating to the next release, consider removing the patch.
-    "https://gist.github.com/NikolausDemmel/7901983/raw/3746869662473860cd5f57e6bc685e76cdb831c2/equiv-is-a-thing-for-clang-apparently.patch"
+    url "https://gist.github.com/NikolausDemmel/7901983/raw/3746869662473860cd5f57e6bc685e76cdb831c2/equiv-is-a-thing-for-clang-apparently.patch"
+    sha1 "db0a4158d2b023e78e5c22fc25e650817b1b0e28"
   end
 
   def install
     # Change the default location of drive libraries to a sane default
     inreplace 'Source/Core/OniContext.cpp',
-      'static const char* ONI_DEFAULT_DRIVERS_REPOSITORY = XN_FILE_LOCAL_DIR "OpenNI2" XN_FILE_DIR_SEP "Drivers";',
+      'static const char* ONI_DEFAULT_DRIVERS_REPOSITORY = "OpenNI2" XN_FILE_DIR_SEP "Drivers";',
       "static const char* ONI_DEFAULT_DRIVERS_REPOSITORY = \"#{lib}\" XN_FILE_DIR_SEP \"OpenNI2\" XN_FILE_DIR_SEP \"Drivers\";"
 
     # make
-    system 'make'
+    system 'make CXX=clang++ CFLAG=-Wno-deprecated ALLOW_WARNING=1'
     # Install the examples
     bin.install Dir['Bin/*-Release/ClosestPointViewer']
     bin.install Dir['Bin/*-Release/EventBasedRead']
@@ -46,7 +47,7 @@ includedir=${prefix}/include/openni2
 
 Name: OpenNI2
 Description: A general purpose driver for all OpenNI cameras.
-Version: 2.2.0.3
+Version: 2.2.beta2
 Cflags: -I${includedir}
 Libs: -L${libdir} -lOpenNI2 -L${libdir}/OpenNI2/Drivers -lDummyDevice -lOniFile -lPS1080
 "
