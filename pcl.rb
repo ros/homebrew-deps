@@ -2,8 +2,8 @@ require 'formula'
 
 class Pcl < Formula
   homepage 'http://www.pointclouds.org/'
-  url 'https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.1.tar.gz'
-  sha1 '784bce606141260423ea04f37b093f59d4c94c6a'
+  url 'https://github.com/PointCloudLibrary/pcl/archive/pcl-1.7.2.tar.gz'
+  sha1 '7a59e9348a81f42725db1f8b1194c9c3313372ae'
 
   head 'https://github.com/PointCloudLibrary/pcl.git'
 
