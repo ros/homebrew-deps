@@ -2,8 +2,8 @@ require 'formula'
 
 class MongodbDev < Formula
   homepage 'http://www.mongodb.org/'
-  url 'https://github.com/mongodb/mongo/archive/r2.5.4.tar.gz'
-  sha1 '0d8b8dad3b5909af2b9b7ba7ed22d5cb0a7cfd98'
+  url 'https://github.com/fjonath1/mongodb-ros-osx/archive/master.zip'
+  sha1 '8e045846213484ca5de64217daf401f0ffd72237'
   version '2.5.4'
 
   depends_on 'scons'
@@ -12,11 +12,11 @@ class MongodbDev < Formula
   conflicts_with "mongodb", :because=>"installs the same binaries"
 
   def install
-    args =  ["--full", "--use-system-boost", "--prefix=#{prefix}"]
+    args =  ["--full", "--use-system-boost", "-j4", "--prefix=#{prefix}"]
 
-    if ENV.compiler == :clang && MacOS.version >= :mavericks
+    if ENV.compiler == :clang
         args << "--64"
-        args << "--libc++"
+        # args << "--libc++"
         args << "--osx-version-min=10.9"
     end
 
