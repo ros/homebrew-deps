@@ -16,7 +16,7 @@ class MongodbDev < Formula
   def install
     args =  ["--full", "--use-system-boost", "-j4", "--prefix=#{prefix}"]
 
-    if ENV.compiler == :clang
+    if ENV.compiler == :clang && MacOS.version >= :mavericks
         args << "--64"
         args << "--libc++"
         args << "--osx-version-min=10.9"
