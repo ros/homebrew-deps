@@ -15,11 +15,13 @@ class MongodbDev < Formula
 
   def install
     args =  ["--full", "--use-system-boost", "-j4", "--prefix=#{prefix}"]
+    boost = Formula.factory('boost').prefix
 
     if ENV.compiler == :clang && MacOS.version >= :mavericks
         args << "--64"
         args << "--libc++"
         args << "--osx-version-min=10.9"
+        args << "--extrapath=#{boost}"
     end
 
     system "scons", "install", *args
