@@ -3,7 +3,7 @@ require 'formula'
 class YamlCpp03 < Formula
   homepage 'http://code.google.com/p/yaml-cpp/'
   url 'http://yaml-cpp.googlecode.com/files/yaml-cpp-0.3.0.tar.gz'
-  sha1 '28766efa95f1b0f697c4b4a1580a9972be7c9c41'
+  sha256 '2cd038b5a1583b6745e949e196fba525f6d0d5fd340566585fde24fc7e117b82'
 
   depends_on 'cmake' => :build
 
