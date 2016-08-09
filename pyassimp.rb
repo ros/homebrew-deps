@@ -3,7 +3,7 @@ require 'formula'
 class Pyassimp < Formula
   homepage 'http://assimp.sourceforge.net/'
   url 'http://sourceforge.net/projects/assimp/files/assimp-2.0/assimp--2.0.863-sdk.zip'
-  sha1 'eb6938c134e7110a96243570e52a8b860d15d915'
+  sha256 '0792e844a808b5ea53b0590031bdd6cc03b9895e90dfd2cd6422423188d8a94c'
 
   depends_on :python => :recommended
   depends_on 'assimp'

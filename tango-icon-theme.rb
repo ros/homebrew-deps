@@ -3,7 +3,7 @@ require 'formula'
 class TangoIconTheme < Formula
   homepage 'http://tango.freedesktop.org/'
   url 'http://tango.freedesktop.org/releases/tango-icon-theme-0.8.90.tar.gz'
-  sha1 'acdfbf3749885d36349263188334f6d6be405acc'
+  sha256 '6e98d8032d57d818acc907ec47e6a718851ff251ae7c29aafb868743eb65c88e'
 
   depends_on 'automake' => :build
   depends_on 'gettext'
