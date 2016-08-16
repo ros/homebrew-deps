@@ -3,7 +3,7 @@ require "formula"
 class UrdfdomHeaders < Formula
   homepage "http://wiki.ros.org/urdfdom_headers"
   url "https://github.com/ros/urdfdom_headers/archive/0.2.3.tar.gz"
-  sha256 "b0a707c77d6defc567b3fd2bdc6b74fc7e190504e50653107a0725ea22ae086f"
+  sha256 "6b1f27b002c6d897b43ed57988133f40aac093a2a6e84d9bf08ed36a13b401ae"
 
   depends_on "cmake" => :build
 
