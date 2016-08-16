@@ -3,7 +3,7 @@ require "formula"
 class Urdfdom < Formula
   homepage "http://wiki.ros.org/urdf"
   url "https://github.com/ros/urdfdom/archive/0.2.10.tar.gz"
-  sha256 "2171c61bc6f46575fb0847112b4b7c766a6d664da83bfa327692ba99fc474041"
+  sha256 "e200f5adefa6bf8304e56ab8a3e1c04d3b6cced5df472f4aeb430ff81f1ffa0d"
 
   depends_on "cmake" => :build
   depends_on "boost" => :build
