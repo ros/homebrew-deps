@@ -1,11 +1,12 @@
 require 'formula'
 
-class Gtest <Formula
+class Gtest < Formula
   skip_clean "lib"
-  url 'https://github.com/google/googletest/archive/release-1.7.0.zip'
+  url 'https://github.com/google/googletest/archive/release-1.7.0.tar.gz'
   homepage 'https://github.com/google/googletest'
-  sha256 'b58cb7547a28b2c718d1e38aee18a3659c9e3ff52440297e965f5edffe34b6d0'
-  
+  sha256 'f73a6546fdf9fce9ff93a5015e0333a8af3062a152a9ad6bcb772c96687016cc'
+
+  depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
