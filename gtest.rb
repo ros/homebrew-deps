@@ -2,9 +2,12 @@ require 'formula'
 
 class Gtest <Formula
   skip_clean "lib"
-  url 'http://googletest.googlecode.com/files/gtest-1.7.0.zip'
-  homepage 'http://code.google.com/p/googletest/'
-  sha256 '247ca18dd83f53deb1328be17e4b1be31514cedfc1e3424f672bf11fd7e0d60d'
+  url 'https://github.com/google/googletest/archive/release-1.7.0.zip'
+  homepage 'https://github.com/google/googletest'
+  sha256 'b58cb7547a28b2c718d1e38aee18a3659c9e3ff52440297e965f5edffe34b6d0'
+  
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def patches
     # This is necessary to get gtest to function wtih libc++
@@ -14,6 +17,11 @@ class Gtest <Formula
   end
 
   def install
+    system "glibtoolize"
+    system "aclocal"
+    system "autoheader"
+    system "automake --add-missing"
+    system "autoconf"
     system "./configure", "CPPFLAGS=-DGTEST_HAS_TR1_TUPLE=0", "--prefix=#{prefix}", "--disable-dependency-tracking"
     inreplace 'scripts/gtest-config', '`dirname $0`', '$bindir'
     system "make"
