@@ -6,8 +6,8 @@ class Gtest <Formula
   homepage 'https://github.com/google/googletest'
   sha256 'b58cb7547a28b2c718d1e38aee18a3659c9e3ff52440297e965f5edffe34b6d0'
   
-  depends_on "automake"
-  depends_on "libtool"
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def patches
     # This is necessary to get gtest to function wtih libc++
