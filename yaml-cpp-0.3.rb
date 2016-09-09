@@ -1,9 +1,9 @@
 require 'formula'
 
 class YamlCpp03 < Formula
-  homepage 'http://code.google.com/p/yaml-cpp/'
-  url 'http://yaml-cpp.googlecode.com/files/yaml-cpp-0.3.0.tar.gz'
-  sha256 "2cd038b5a1583b6745e949e196fba525f6d0d5fd340566585fde24fc7e117b82"
+  homepage 'https://github.com/jbeder/yaml-cpp'
+  url 'https://github.com/jbeder/yaml-cpp/archive/release-0.3.0.tar.gz'
+  sha256 "ab8d0e07aa14f10224ed6682065569761f363ec44bc36fcdb2946f6d38fe5a89"
 
   depends_on 'cmake' => :build
 
