@@ -13,7 +13,7 @@ class Pyassimp < Formula
   end
 
   def install
-    temp_site_packages = lib/python.xy/'site-packages'
+    temp_site_packages = lib+"python2.7/site-packages"
 
     args = [
       "--verbose",
@@ -23,11 +23,11 @@ class Pyassimp < Formula
     ]
 
     # build the pyassimp libraries
-    system python, "-s", "setup.py", *args
+    system "python", "-s", "setup.py", *args
   end
 
   test do
-    system python, "-c", "'import pyassimp'"
+    system "python", "-c", "'import pyassimp'"
   end
 end
 
