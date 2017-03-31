@@ -1,9 +1,8 @@
-require "formula"
-
 class UrdfdomHeaders < Formula
+  desc "Headers for URDF parsers "
   homepage "http://wiki.ros.org/urdfdom_headers"
-  url "https://github.com/ros/urdfdom_headers/archive/0.2.3.tar.gz"
-  sha256 "6b1f27b002c6d897b43ed57988133f40aac093a2a6e84d9bf08ed36a13b401ae"
+  url "https://github.com/ros/urdfdom_headers/archive/1.0.0.tar.gz"
+  sha256 "f341e9956d53dc7e713c577eb9a8a7ee4139c8b6f529ce0a501270a851673001"
 
   depends_on "cmake" => :build
 
@@ -13,6 +12,6 @@ class UrdfdomHeaders < Formula
   end
 
   test do
-    system "pkg-config --cflags-only-I urdfdom_headers"
+    system "pkg-config", "--cflags-only-I", "urdfdom_headers"
   end
 end
