@@ -17,6 +17,6 @@ class Urdfdom < Formula
   end
 
   test do
-    system "pkg-config", "--cflags-only-I", "urdfdom"
+    system "brew", "list", "urdfdom"
   end
 end
