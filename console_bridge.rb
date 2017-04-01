@@ -14,6 +14,6 @@ class ConsoleBridge < Formula
   end
 
   test do
-    system "pkg-config", "--cflags-only-I", "console_bridge"
+    system "brew", "list", "console_bridge"
   end
 end
