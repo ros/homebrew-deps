@@ -1,13 +1,13 @@
-require "formula"
-
 class Urdfdom < Formula
+  desc "URDF parser"
   homepage "http://wiki.ros.org/urdf"
-  url "https://github.com/ros/urdfdom/archive/0.2.10.tar.gz"
-  sha256 "e200f5adefa6bf8304e56ab8a3e1c04d3b6cced5df472f4aeb430ff81f1ffa0d"
+  url "https://github.com/ros/urdfdom/archive/1.0.0.tar.gz"
+  sha256 "243ea925d434ebde0f9dee35ee5615ecc2c16151834713a01f85b97ac25991e1"
+  head "https://github.com/ros/urdfdom", :branch => "master"
 
   depends_on "cmake" => :build
-  depends_on "boost" => :build
-  depends_on "tinyxml" => :build
+
+  depends_on "tinyxml"
   depends_on "ros/deps/console_bridge"
   depends_on "ros/deps/urdfdom_headers"
 
@@ -17,6 +17,6 @@ class Urdfdom < Formula
   end
 
   test do
-    system "pkg-config --cflags-only-I urdfdom"
+    system "brew", "list", "urdfdom"
   end
 end
