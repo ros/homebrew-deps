@@ -6,7 +6,6 @@ class ConsoleBridge < Formula
   head "https://github.com/ros/console_bridge", :branch => "master"
 
   depends_on "cmake" => :build
-  depends_on "pkg-config" => :build # for test
 
   def install
     system "cmake", ".", *std_cmake_args
