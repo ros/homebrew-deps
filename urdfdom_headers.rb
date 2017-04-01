@@ -13,6 +13,6 @@ class UrdfdomHeaders < Formula
   end
 
   test do
-    system "pkg-config", "--cflags-only-I", "urdfdom_headers"
+    system "brew", "list", "urdfdom_headers"
   end
 end
