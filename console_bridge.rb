@@ -7,6 +7,7 @@ class ConsoleBridge < Formula
 
   depends_on "cmake" => :build
   depends_on "boost" => :build
+  depends_on "pkg-config" => :build # for test
 
   def install
     system "cmake", ".", *std_cmake_args
