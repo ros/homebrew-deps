@@ -17,7 +17,7 @@ class Shiboken < Formula
   head "https://github.com/PySide/Shiboken.git"
 
   depends_on "cmake" => :build
-  depends_on "osrf/simulation/qt4-no-webkit"
+  depends_on "qt4-no-webkit"
 
   # don't use depends_on :python because then bottles install Homebrew's python
   option "without-python", "Build without python 2 support"

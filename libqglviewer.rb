@@ -17,7 +17,7 @@ class Libqglviewer < Formula
 
   option :universal
 
-  depends_on "osrf/simulation/qt4-no-webkit"
+  depends_on "qt4-no-webkit"
 
   def install
     args = %W[

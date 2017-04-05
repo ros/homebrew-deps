@@ -20,7 +20,7 @@ class Pyqt < Formula
     odie "pyqt: --with-python3 must be specified when using --without-python"
   end
 
-  depends_on "osrf/simulation/qt4-no-webkit"
+  depends_on "qt4-no-webkit"
 
   if build.with? "python3"
     depends_on "sip" => "with-python3"
