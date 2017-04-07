@@ -7,7 +7,7 @@
 #
 #   git -C "$(brew --repo homebrew/core)" show 2a6d326^:Formula/pyqt.rb
 
-class Pyqt < Formula
+class PyqtAT411 < Formula
   desc "Python bindings for Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
   url "https://downloads.sf.net/project/pyqt/PyQt4/PyQt-4.11.4/PyQt-mac-gpl-4.11.4.tar.gz"
