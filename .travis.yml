@@ -12,6 +12,9 @@ matrix:
       rvm: system
 
 before_install:
+  # Required for OS X 10.11
+  - if [ "$OSX" = "10.11" ]; then brew cask reinstall xquartz; fi
+
   - export TRAVIS_COMMIT="$(git rev-parse --verify -q HEAD)"
   - if [ -f ".git/shallow" ]; then
       travis_retry git fetch --unshallow;
