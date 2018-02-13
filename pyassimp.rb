@@ -1,7 +1,7 @@
 require 'formula'
 
 class Pyassimp < Formula
-  homepage 'https://assimp.sourceforge.net/'
+  homepage 'http://assimp.sourceforge.net/'
   url 'https://sourceforge.net/projects/assimp/files/assimp-2.0/assimp--2.0.863-sdk.zip'
   sha256 '4d7a048f9284e14904fcfc973fc4234f15ee4932e88f901ff82b6aaabaec9082'
 
