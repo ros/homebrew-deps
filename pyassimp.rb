@@ -5,8 +5,8 @@ class Pyassimp < Formula
   url 'http://sourceforge.net/projects/assimp/files/assimp-2.0/assimp--2.0.863-sdk.zip'
   sha256 '4d7a048f9284e14904fcfc973fc4234f15ee4932e88f901ff82b6aaabaec9082'
 
-  depends_on :python => :recommended
-  depends_on 'assimp'
+  depends_on "python" => :recommended
+  depends_on "assimp"
 
   def patches
     DATA
