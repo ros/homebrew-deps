@@ -14,7 +14,7 @@ class Gtest < Formula
     # This is necessary to get gtest to function wtih libc++
     # Otherwise, every catkin package has to export that flag.
     # The patch only changes the default behavior.
-    DATA
+    :DATA
   end
 
   def install
